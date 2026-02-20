@@ -80,8 +80,20 @@ export default class Deck {
         this.maxSize = maxSize;
         this.cards = [];
         this.defenderCards = [];
+        this.currentSize = maxSize;
 
         this.buildDeck();
+    }
+
+    get size() {
+        return this.currentSize;
+    }
+
+    shuffle() {
+        for (let i = this.cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
+        }
     }
 
     buildDeck() {
@@ -109,6 +121,7 @@ export default class Deck {
         });
 
         this.cards = cards;
+        this.shuffle();
     }
 
     madeDefenderCards() {
@@ -132,4 +145,18 @@ export default class Deck {
         });
         this.defenderCards = defenders;
     }
+
+    draw(amount = 1) {
+        const drawnCards = [];
+
+        for (let i = 0; i < amount; i++) {
+            if (this.size === 0) break;
+
+            drawnCards.push(this.cards.pop());
+            this.currentSize--;
+        }
+
+        return drawnCards;
+    }
+
 }
