@@ -110,4 +110,26 @@ export default class Deck {
 
         this.cards = cards;
     }
+
+    madeDefenderCards() {
+        const defenders = [];
+        defenderCardData.forEach((template) => {
+            for (let i = 1; i <= 2; i++) {
+                defenders.push(
+                    new Card(
+                        `Defender ${i}`,
+                        "Defender",
+                        template.description || "",
+                        template.cost,
+                        template.baseStats.attack,
+                        template.baseStats.health,
+                        template.baseStats.health,
+                        null,
+                        `/assets/defender.png`
+                    )
+                );
+            }
+        });
+        this.defenderCards = defenders;
+    }
 }
