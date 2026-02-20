@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Card from './Hand.jsx'
+import Cardlayout from './Cardlayout.jsx'
+import Handlayout from './Handlayout.jsx'
 
 function App() {
 
   return (
-    <Card></Card>
+    <Handlayout></Handlayout>
   )
 
 }

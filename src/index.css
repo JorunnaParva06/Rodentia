@@ -1,25 +1,42 @@
-.card {
+.cardlayout {
   border: 2.5px solid black;
   border-radius: 2.5px;
   text-align: center;
-  width: 62.5px;
-  height: 87.5px;
+  width: 125px;
+  height: 125px;
 
 }
 
 .cardart {
   border: 1px solid black;
-  width: 56.25px;
-  height: 37.5px;
+  width: 75px;
+  height: 75px;
   padding: 5px;
 }
 
 .cardname {
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
   text-align: left;
+  font-size: 0.5rem;
 }
 
 .carddescription {
   text-align: center;
+  font-size: 0.5rem;
+}
+
+.stats {
+  text-align: center;
+  font-size: 0.5rem;
+}
+
+.handlayout {
+  border: 5px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: bottom;
+  gap: 20px;
+  padding: 10px;
 }
