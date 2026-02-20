@@ -1,6 +1,7 @@
 export default class Card {
-    constructor(name, description, cost, attack, currentHealth, maxHealth, ability, image) {
+    constructor(name, type, description, cost, attack, currentHealth, maxHealth, ability, image) {
         this.name = name;
+        this.type = type;
         this.description = description;
         this.cost = cost;
         this.attack = attack;
@@ -10,7 +11,49 @@ export default class Card {
         this.image = image;
     }
 
-    get getLabel() {
+    get cardName() {
+        return this.name;
+    }
+
+    get cardType() {
+        return this.type;
+    }
+
+    get cardDescription() {
+        return this.description;
+    }
+
+    get cardCost() {
+        return this.cost;
+    }
+
+    get cardAttack() {
+        return this.attack;
+    }
+
+    get cardHealth() {        
+        return `${this.currentHealth}/${this.maxHealth}`;
+    }
+
+    get isCardAlive() {
+        return this.currentHealth > 0;
+    }
+
+    get hasAbility() {
+        return this.ability !== null;
+    }
+
+    get cardHealthStatus() {
+        if (this.currentHealth === this.maxHealth) {
+            return "Healthy";
+        } else if (this.currentHealth > 0) {
+            return "Injured";
+        } else {
+            return "Destroyed";
+        }
+    }
+
+    get cardLabel() {
         return `${this.name} (Cost: ${this.cost}, Attack: ${this.attack}, Health: ${this.currentHealth}/${this.maxHealth})`;
     }
 
@@ -37,13 +80,3 @@ export default class Card {
         }
     }
 }
-
-new Card(
-    "Sneaky Rat",
-    2,
-    2,
-    1,
-    1,
-    null,
-    "images/sneaky_rat.png"
-);
