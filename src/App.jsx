@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import Cardlayout from './Cardlayout.jsx'
-import Handlayout from './Handlayout.jsx'
+import Gamelayout from './Gamelayout'
 
 function App() {
 
   return (
-    <Handlayout></Handlayout>
+    <Gamelayout></Gamelayout>
   )
 
 }
