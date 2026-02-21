@@ -70,18 +70,24 @@ class Game {
             }
 
             // Check if this damage hits a card or a player, apply damage
-            if (this.player1.lanes[i].unit == null) {
+            if (this.player1.lanes[i].defender == null && this.player1.lanes[i].unit == null) {
                 this.player1.life -= player1_damage_taken;
             }
-            else {
+            else if (this.player1.lanes[i].defender == null && this.player1.lanes[i].unit != null) {
                 this.player1.lanes[i].unit -= player1_damage_taken;
             }
+            else {
+                this.player1.lanes[i].defender -= player1_damage_taken;
+            }
 
-            if (this.player2.lanes[i].unit == null) {
+            if (this.player2.lanes[i].defender == null && this.player2.lanes[i].unit == null) {
                 this.player2.life -= player2_damage_taken;
             }
-            else {
+            else if (this.player2.lanes[i].defender == null && this.player2.lanes[i].unit != null) {
                 this.player2.lanes[i].unit -= player2_damage_taken;
+            }
+            else {
+                this.player2.lanes[i].defender -= player2_damage_taken;
             }
 
         }
