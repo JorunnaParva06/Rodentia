@@ -146,7 +146,7 @@ export default class Deck {
         this.defenderCards = defenders;
     }
 
-    draw(amount = 1) {
+    draw(amount = 3) {
         const drawnCards = [];
 
         for (let i = 0; i < amount; i++) {
