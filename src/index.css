@@ -60,3 +60,9 @@
   flex-direction: column;
   justify-content: left;
 }
+
+.informationlayout {
+  text-align: right;
+  width: 1150px;
+  position: absolute;
+}
