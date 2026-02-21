@@ -1,11 +1,11 @@
-import picture from './assets/2 Minutes Slug.png';
+import picture from './assets/rat_basic.png';
 import Card from './game/card.js';
 
-const a = new Card("Basic Rat", "This is a basic rat", 1, 1, 1, 1, null, picture);  // Temporary card for testing
+const a = new Card("Basic Rat", "Rat", "This is a basic rat", 1, 1, 1, 1, null, picture);  // Temporary card for testing
 
 
 const handleClick = () => {
-alert('Div was clicked!');
+alert(a.description);
 };
 
 function Cardlayout() {
