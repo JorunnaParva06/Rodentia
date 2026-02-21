@@ -39,7 +39,7 @@
   vertical-align: bottom;
   gap: 20px;
   padding: 10px;
-  width: 671px;
+  width: 660px;
 }
 
 .boardlayout {
@@ -49,14 +49,20 @@
   justify-content: center;
   gap: 0;
   padding: 0;
-  width: 700px;
+  width: 690px;
 }
 
 .lanelayout {
   border: 5px solid red;
-  height: 518px;
-  width: 150px;
+  height: 519px;
+  width: 130px;
   padding: 0;
   flex-direction: column;
   justify-content: left;
+}
+
+.informationlayout {
+  text-align: right;
+  width: 1150px;
+  position: absolute;
 }

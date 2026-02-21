@@ -56,10 +56,40 @@ class Game {
         player.refillResource()
     }
     resolveCombat(){
+        for (let i = 0; i < length(this.player1.lanes); i++) {
+            
+            // Get damage taken by both sides
+            player1_damage_taken = 0;
+            if (this.player2.lanes[i].unit != null) {
+                player1_damage_taken = this.player2.lanes[i].unit.attack;
+            }
 
+            player2_damage_taken = 0;
+            if (this.player1.lanes[i].unit != null) {
+                player2_damage_taken = this.player1.lanes[i].unit.attack;
+            }
+
+            // Check if this damage hits a card or a player, apply damage
+            if (this.player1.lanes[i].unit == null) {
+                this.player1.life -= player1_damage_taken;
+            }
+            else {
+                this.player1.lanes[i].unit -= player1_damage_taken;
+            }
+
+            if (this.player2.lanes[i].unit == null) {
+                this.player2.life -= player2_damage_taken;
+            }
+            else {
+                this.player2.lanes[i].unit -= player2_damage_taken;
+            }
+
+        }
     }
     checkWin(){
-
+        if (this.player1.health <= 0 || this.player2.health <= 0) {
+            return true;
+        }
     }
 };
 

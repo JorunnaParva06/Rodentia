@@ -5,6 +5,9 @@ const a = new Card("Basic Rat", "Rat", "This is a basic rat", 1, 1, 1, 1, null, 
 
 
 const handleClick = () => {
+    // First check if this card is in your hand
+    // If yes:
+    // 
 alert(a.description);
 };
 
