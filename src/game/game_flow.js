@@ -51,10 +51,9 @@ class Game {
         this.turn++
         this.player1.increaseResourceCap()
         this.player2.increaseResourceCap()
-        
     }
     handlePlacement(player){
-
+        player.refillResource()
     }
     resolveCombat(){
 
